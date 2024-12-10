@@ -1,0 +1,15 @@
+{
+  "welcome": "welcome",
+  "Smrdlako": "",
+  "header": {
+    "button": {
+      "label": "Get Started"
+    },
+    "navItems": {
+      "home": "Home",
+      "about": "About Us",
+      "services": "Services",
+      "contact": "Contact"
+    }
+  }
+}

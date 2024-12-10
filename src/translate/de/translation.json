@@ -1,0 +1,13 @@
+{
+  "header": {
+    "button": {
+      "label": "Jetzt Anfragen"
+    },
+    "navItems": {
+      "home": "Home",
+      "about": "Über uns",
+      "services": "Service",
+      "contact": "Kontakt"
+    }
+  }
+}

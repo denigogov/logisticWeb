@@ -1,0 +1,109 @@
+.navItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: spacing(medium);
+  align-items: center;
+
+  @include breakpoint(medium) {
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  &__logo {
+    width: 70px;
+    cursor: pointer;
+    &-slogan {
+      font-size: fontsize(xxsmall);
+    }
+
+    @include breakpoint(medium) {
+      display: flex;
+      align-items: center;
+      gap: spacing(xsmall);
+
+      &-slogan {
+        margin-left: -55px;
+        font-size: 0.5rem;
+
+        &:hover {
+          color: color(textDark);
+        }
+      }
+    }
+  }
+
+  &__list {
+    @include breakpoint(medium, small) {
+      width: 100%;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: spacing(small);
+
+      @include breakpoint(small, medium) {
+        padding-left: 10px;
+      }
+
+      li {
+        cursor: pointer;
+        @include textHover(color(textDark));
+        @include breakpoint(medium) {
+          &::after {
+            content: "\22EE";
+            color: color(muted);
+            padding-left: 20px;
+          }
+        }
+
+        @include breakpoint(medium, medium) {
+          text-align: start;
+          &:hover {
+            border-radius: 15px;
+            margin-left: -10px;
+            padding: 10px;
+            background-color: color(backgroundBlack);
+            color: white;
+          }
+        }
+      }
+    }
+
+    @include breakpoint(medium) {
+      ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: spacing(medium);
+        margin: 0 auto;
+      }
+    }
+  }
+
+  // button & language switch
+  &__contactBtn {
+    .button {
+      @include breakpoint(small, small) {
+        button {
+          background-color: color(backgroundBlack);
+          color: color(textWhite);
+
+          &:hover {
+            background-color: color(backgroundWhite);
+            color: color(text);
+            border: 1px solid color(text);
+          }
+        }
+      }
+    }
+
+    @include breakpoint(medium) {
+      display: flex;
+      align-items: center;
+      gap: spacing(xsmall);
+    }
+  }
+}

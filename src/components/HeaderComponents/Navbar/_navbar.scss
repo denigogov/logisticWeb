@@ -1,0 +1,39 @@
+.navBar {
+  padding: 0 spacing(default);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  &__menuIcon {
+    width: 40px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    padding-top: 20px;
+
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+
+  // on mobile phone menu !
+  &__mobileContent {
+    color: color(text) !important;
+
+    .uk-offcanvas-close {
+      background-color: transparent;
+      color: color(text) !important;
+      border: none;
+    }
+  }
+  .navItems {
+    height: calc(100% - 2rem);
+  }
+
+  .navbar__hideMobile {
+    display: none;
+
+    @include breakpoint(medium) {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@use "./tokens";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: color(text);
+  font-family: fontFamily(primary), sans-serif;
+  font-weight: fontweight(default);
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  color: color(text);
+  font-size: fontsize(default);
+}
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   color: color(text);
+// }

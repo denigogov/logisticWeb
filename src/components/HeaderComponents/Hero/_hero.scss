@@ -1,0 +1,29 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  height: calc(100dvh - 100px);
+
+  @include breakpoint(medium) {
+    flex-direction: row;
+  }
+
+  &__first {
+    flex: 2;
+    height: 100%;
+    border: 1px solid color(text);
+
+    &-content {
+      width: 50%;
+      h1 {
+        font-family: fontFamily(primary);
+        font-weight: fontweight(extraBold);
+        font-size: clamp(3.25rem, 3vw, 5rem);
+      }
+    }
+  }
+
+  &__second {
+    flex: 1;
+    height: 100%;
+  }
+}

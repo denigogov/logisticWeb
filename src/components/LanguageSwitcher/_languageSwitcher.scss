@@ -1,0 +1,30 @@
+.languageSwitch {
+  .languageSwit__btn {
+    display: flex !important;
+    align-items: center;
+    gap: spacing(xxsmall);
+    border: 1px solid color(textDark) !important;
+    color: color(text) !important;
+    background-color: color(backgroundWhite) !important;
+
+    img {
+      width: 20px;
+      filter: brightness(0) saturate(100%) invert(0%) sepia(86%) saturate(7497%)
+        hue-rotate(273deg) brightness(95%) contrast(90%);
+    }
+  }
+
+  &:hover {
+    img {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(33%)
+        saturate(159%) hue-rotate(274deg) brightness(108%) contrast(101%);
+    }
+    span {
+      color: color(textWhite);
+    }
+  }
+
+  &:hover button {
+    background-color: color(backgroundBlack) !important;
+  }
+}

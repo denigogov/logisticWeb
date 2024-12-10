@@ -1,0 +1,24 @@
+.button {
+  button {
+    border-radius: 3px;
+  }
+
+  @include breakpoint(small) {
+    .uk-button-default {
+      color: color(text) !important;
+      border: 1px solid color(textDark) !important;
+    }
+
+    .uk-button-secondary {
+      background-color: color(backgroundBlack) !important;
+      color: color(textWhite) !important;
+      border: 1px solid color(textDark) !important;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: color(backgroundWhite) !important;
+        color: color(text) !important;
+      }
+    }
+  }
+}
