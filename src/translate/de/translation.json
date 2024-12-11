@@ -9,5 +9,17 @@
       "services": "Service",
       "contact": "Kontakt"
     }
+  },
+  "hero": {
+    "button": {
+      "labelHeroBtn": "Angebot anfragen",
+      "labelHeroBtn1": "Mehr erfahren"
+    },
+    "text": {
+      "top": "Kompakt. Flexibel.",
+      "highlight": "Immer ",
+      "middle": "pünktlich.",
+      "copy": "Effizient. Flexibel. Termingerecht. Mit innovativen Lösungen bringen wir Ihre Waren ans Ziel."
+    }
   }
 }

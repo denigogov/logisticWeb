@@ -16,10 +16,12 @@ const NavItems: React.FC<NavItemsProps> = ({ aditionalClass, navigation }) => {
   const navItems = navigation?.navbar?.navItems ?? [];
 
   return (
-    <div className={`navItems ${aditionalClass}`}>
+    <div className={`navItems  ${aditionalClass}`}>
       <div className="navItems__logo">
         <img src={logo} alt={logo} />
-        <p className="navItems__logo-slogan">PakoTrans</p>
+        <p className="navItems__logo-slogan">
+          All<strong>Transport</strong>
+        </p>
       </div>
       {navItems.length > 0 && (
         <div className="navItems__list">

@@ -1,6 +1,4 @@
 {
-  "welcome": "welcome",
-  "Smrdlako": "",
   "header": {
     "button": {
       "label": "Get Started"
@@ -10,6 +8,18 @@
       "about": "About Us",
       "services": "Services",
       "contact": "Contact"
+    }
+  },
+  "hero": {
+    "button": {
+      "labelHeroBtn": "Request a Quote",
+      "labelHeroBtn1": "Learn More"
+    },
+    "text": {
+      "top": "Compact. Flexible.",
+      "highlight": "Always ",
+      "middle": "on time.",
+      "copy": "Efficient. Flexible. On schedule. With innovative solutions, we deliver your goods to their destination."
     }
   }
 }

@@ -3,7 +3,7 @@
  * @param key name for the value
  * @param value value
  */
-export const saveToLocalStorage = (key: string, value: any): void => {
+export const saveToLocalStorage = (key: string, value: string): void => {
   try {
     const stringValue = JSON.stringify(value);
 
@@ -18,7 +18,7 @@ export const saveToLocalStorage = (key: string, value: any): void => {
  * @param key item under which key is saved  !
  * @returns object
  */
-export const getLocalStorageItem = (key: string): any | null => {
+export const getLocalStorageItem = (key: string): string | null => {
   try {
     const storedValue = localStorage.getItem(key);
 

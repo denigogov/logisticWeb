@@ -26,7 +26,7 @@ const LanguageSwitch: React.FC<LanguageSwitchProps> = ({}) => {
       <div uk-form-custom="target: > * > span:first-child">
         <select
           onChange={(e) => onClickChange(e.target.value)}
-          defaultValue={localStorageLang}
+          defaultValue={localStorageLang ?? ""}
         >
           <option value="de">DE</option>
           <option value="en">EN</option>

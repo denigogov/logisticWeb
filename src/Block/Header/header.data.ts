@@ -1,3 +1,4 @@
+import { HeroTypesData } from "../../components/HeaderComponents/Hero/hero.data";
 import { NavData } from "../../components/HeaderComponents/Navbar/NavItems/navitem.data";
 
 export const getNavigationData = (t: (key: string) => string): NavData => ({
@@ -17,4 +18,28 @@ export const getNavigationData = (t: (key: string) => string): NavData => ({
   },
 });
 
-export const getHeroData = (t: (key: string) => string): any => ({});
+export const getHeroData = (t: (key: string) => string): HeroTypesData => ({
+  hero: {
+    buttons: [
+      {
+        label: t("hero.button.labelHeroBtn"),
+        size: "large",
+        type: "secondary",
+        className: "",
+      },
+
+      {
+        label: t("hero.button.labelHeroBtn1"),
+        size: "large",
+        type: "default",
+        className: "",
+      },
+    ],
+    text: {
+      top: t("hero.text.top"),
+      highlight: t("hero.text.highlight"),
+      middle: t("hero.text.middle"),
+      copy: t("hero.text.copy"),
+    },
+  },
+});

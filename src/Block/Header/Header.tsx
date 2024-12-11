@@ -3,19 +3,17 @@ import Navbar from "../../components/HeaderComponents/Navbar/Navbar";
 import { getNavigationData, getHeroData } from "./header.data";
 import Hero from "../../components/HeaderComponents/Hero/Hero";
 
-interface HeaderProps {}
-
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC = () => {
   const { t } = useTranslation();
 
   const headerData = getNavigationData(t);
   const heroData = getHeroData(t);
 
   return (
-    <Header>
+    <header>
       <Navbar navigation={headerData} />
       <Hero heroData={heroData} />
-    </Header>
+    </header>
   );
 };
 

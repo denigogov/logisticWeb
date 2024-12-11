@@ -9,10 +9,14 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ navigation }) => {
   return (
-    <div className="navBar">
+    <nav className="navBar">
       {/* MOBILE VIEW MENU */}
       <div className="navBar__menuIcon" uk-toggle="target: #offcanvas-navbar ">
         <img src={hambMenuIcon} alt={hambMenuIcon} />
+
+        <p>
+          All<strong>Transport</strong>
+        </p>
       </div>
 
       <div id="offcanvas-navbar" uk-offcanvas="mode: push; overlay: true">
@@ -30,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ navigation }) => {
       {/* MOBILE VIEW MENU END */}
 
       <NavItems aditionalClass="navbar__hideMobile" navigation={navigation} />
-    </div>
+    </nav>
   );
 };
 

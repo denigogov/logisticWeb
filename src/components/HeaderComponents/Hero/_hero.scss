@@ -1,29 +1,42 @@
 .hero {
-  display: flex;
-  flex-direction: column;
-  height: calc(100dvh - 100px);
+  .uk-section {
+    // padding-top: 20px;
+    @include breakpoint(default) {
+      padding-top: 10px;
+    }
 
-  @include breakpoint(medium) {
-    flex-direction: row;
-  }
+    @include breakpoint(small) {
+      padding-top: 15px;
+    }
 
-  &__first {
-    flex: 2;
-    height: 100%;
-    border: 1px solid color(text);
-
-    &-content {
-      width: 50%;
-      h1 {
-        font-family: fontFamily(primary);
-        font-weight: fontweight(extraBold);
-        font-size: clamp(3.25rem, 3vw, 5rem);
-      }
+    @include breakpoint(medium) {
+      padding-top: 0;
     }
   }
 
-  &__second {
-    flex: 1;
-    height: 100%;
+  // hero text
+  .uk-heading-large {
+    font-family: fontFamily(primary);
+    font-weight: 700;
+
+    @include breakpoint(medium) {
+      font-weight: 600;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: spacing(xsmall);
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+      gap: spacing(small);
+    }
+  }
+
+  &__highlight {
+    background-color: #ffd966;
   }
 }

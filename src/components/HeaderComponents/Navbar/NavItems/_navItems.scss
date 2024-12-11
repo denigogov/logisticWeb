@@ -52,11 +52,11 @@
         cursor: pointer;
         @include textHover(color(textDark));
         @include breakpoint(medium) {
-          &::after {
-            content: "\22EE";
-            color: color(muted);
-            padding-left: 20px;
-          }
+          // &::after {
+          //   content: "\22EE";
+          //   color: color(muted);
+          //   padding-left: 20px;
+          // }
         }
 
         @include breakpoint(medium, medium) {
