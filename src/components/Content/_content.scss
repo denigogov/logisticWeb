@@ -1,0 +1,19 @@
+.content {
+  &__title {
+    font-family: fontFamily(primary);
+  }
+
+  &__copy {
+    padding-block: spacing(large);
+
+    &-text {
+      color: color(text);
+      font-family: fontFamily(secondary);
+    }
+  }
+
+  .content-subtitle {
+    color: color(text);
+    margin-bottom: 30px;
+  }
+}

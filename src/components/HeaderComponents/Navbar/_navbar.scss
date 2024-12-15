@@ -16,7 +16,7 @@
     }
 
     strong {
-      background-color: #ffd966;
+      background-color: color(highlight);
     }
 
     @include breakpoint(medium) {

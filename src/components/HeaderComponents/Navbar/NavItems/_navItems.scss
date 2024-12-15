@@ -16,6 +16,10 @@
     cursor: pointer;
     &-slogan {
       font-size: fontsize(xxsmall);
+
+      strong {
+        background-color: color(highlight);
+      }
     }
 
     @include breakpoint(medium) {
@@ -24,7 +28,6 @@
       gap: spacing(xsmall);
 
       &-slogan {
-        margin-left: -55px;
         font-size: 0.5rem;
 
         &:hover {
@@ -62,7 +65,7 @@
         @include breakpoint(medium, medium) {
           text-align: start;
           &:hover {
-            border-radius: 15px;
+            border-radius: 5px;
             margin-left: -10px;
             padding: 10px;
             background-color: color(backgroundBlack);

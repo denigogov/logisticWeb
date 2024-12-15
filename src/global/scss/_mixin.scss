@@ -20,10 +20,10 @@
         + "Available breakpoints are: #{map-keys($screenSizeMap)}.";
   }
 }
-@mixin textHover($color, $weight: 500) {
+@mixin textHover($color: color(text), $weight: 500) {
   transition: all 0.3s ease;
   &:hover {
-    color: darken($color, 10%); // Darken the text color by 10%
-    font-weight: $weight; // Change the font weight to the specified value (default is 600)
+    color: darken($color, 10%);
+    font-weight: $weight;
   }
 }

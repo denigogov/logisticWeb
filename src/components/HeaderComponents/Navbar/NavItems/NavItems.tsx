@@ -20,7 +20,7 @@ const NavItems: React.FC<NavItemsProps> = ({ aditionalClass, navigation }) => {
       <div className="navItems__logo">
         <img src={logo} alt={logo} />
         <p className="navItems__logo-slogan">
-          All<strong>Transport</strong>
+          pako-s <strong>transporte</strong>
         </p>
       </div>
       {navItems.length > 0 && (

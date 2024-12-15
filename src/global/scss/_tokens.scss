@@ -4,6 +4,7 @@
 $colorMap: (
   primary: #10181d,
   secondary: #007bff,
+
   accent: #1788b2,
   muted: #dddddd,
   mutedGray: #f2f3f2,
@@ -12,9 +13,11 @@ $colorMap: (
   warning: #ffae00,
   danger: #950000,
   textHightlight: #ee2e31,
-  floorGray: hsla(0deg, 0%, 45%, 0.1),
+
   // text: #6B6B6B,
   // colors define and in use
+  highlight: #ffd966,
+  highlightBackground: hsla(0deg, 0%, 45%, 0.1),
   text: #20303b,
   textDark: #10181d,
   textWhite: #fff,

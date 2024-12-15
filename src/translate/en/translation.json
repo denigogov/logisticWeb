@@ -21,5 +21,34 @@
       "middle": "on time.",
       "copy": "Efficient. Flexible. On schedule. With innovative solutions, we deliver your goods to their destination."
     }
+  },
+  "aboutUs": {
+    "bulletPoints": {
+      "base": {
+        "name": "Base:",
+        "text": "Bretten, Germany",
+        "copy": "Our strategic location enables quick and effective logisticsmanagement across the country."
+      },
+      "operatingLocation": {
+        "name": "Operating Location:",
+        "text": "Germany",
+        "copy": "Specializing in efficient and reliable transport solutions throughout Germany, ensuring local expertise."
+      },
+      "maxWeight": {
+        "name": "Max Weight:",
+        "text": "3.5T",
+        "copy": "Ideal for a variety of domestic shipments, providing flexibility for your logistics needs."
+      },
+      "deliverySpeed": {
+        "name": "Delivery Speed:",
+        "text": "Fast Deliveries",
+        "copy": "Committed to on-time performance for every shipment, guaranteeing your goods arrive when you need them."
+      }
+    },
+    "contentData": {
+      "title": "A Decade of Precision and Reliability in Logistics",
+      "subTitle": "Providing Tailored Logistics Solutions Across Germany, Combining Extensive Experience with Innovative Strategies to Ensure Your Shipments Are Delivered Safely and On Time.",
+      "text": "At Pako-s Transporte, we provide reliable freight solutions tailored to your needs. Founded in Bulgaria in 2015, we built a reputation for precision and exceptional service. Since 2024, we operate exclusively in Bretten, Germany, focusing on efficient domestic logistics. With our innovative approach and years of expertise, you can trust us to deliver your goods safely and on time."
+    }
   }
 }

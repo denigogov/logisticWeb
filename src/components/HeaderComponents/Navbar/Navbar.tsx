@@ -15,7 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ navigation }) => {
         <img src={hambMenuIcon} alt={hambMenuIcon} />
 
         <p>
-          All<strong>Transport</strong>
+          pako-s<strong>transporte</strong>
         </p>
       </div>
 

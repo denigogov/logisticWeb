@@ -1,0 +1,54 @@
+.bulletPoint {
+  .features-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: start;
+      margin-bottom: spacing(small);
+      gap: spacing(small);
+      padding: spacing(xsmall);
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-radius: 10px;
+        background-color: color(muted);
+        @include breakpoint(medium) {
+          background-color: color(mutedHighlight);
+        }
+      }
+    }
+  }
+
+  &__highlight {
+    background-color: color(highlightBackground);
+    border-radius: 20px;
+  }
+
+  &__icon {
+    width: 50px;
+
+    &-background {
+      border-radius: 30%;
+      background-color: color(backgroundBlack);
+      padding: 7px;
+    }
+  }
+
+  &__title {
+    font-weight: fontweight(bold);
+    font-size: fontsize(small);
+
+    margin: 0 0 5px;
+    @include breakpoint(medium) {
+      font-weight: fontweight(medium);
+    }
+  }
+
+  &__copy {
+    margin: 0;
+    color: color(text);
+    font-weight: fontweight(light);
+  }
+}
