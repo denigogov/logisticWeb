@@ -6,9 +6,7 @@ import {
   saveToLocalStorage,
 } from "../../utils/localstorage";
 
-interface LanguageSwitchProps {}
-
-const LanguageSwitch: React.FC<LanguageSwitchProps> = ({}) => {
+const LanguageSwitch: React.FC = () => {
   const { i18n } = useTranslation();
   const localStorageLang = getLocalStorageItem("lng");
 

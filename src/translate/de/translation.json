@@ -70,5 +70,50 @@
       "text2": "Individuelle Lösungen",
       "hoverText2": "Flexible Transportdienste, die auf Ihre Bedürfnisse zugeschnitten sind. Wir passen uns an, um Ihre spezifischen Anforderungen zu erfüllen."
     }
+  },
+  "form": {
+    "formText": {
+      "titleTop": "Melden Sie sich",
+      "titleBottom": "Jetzt bei Uns",
+      "copy": "Kontaktieren Sie uns noch heute und lassen Sie uns ein Gespräch darüber beginnen, wie wir Ihnen helfen können, Ihre Ziele zu erreichen."
+    },
+    "formInputs": {
+      "button": {
+        "label": "Nachricht senden"
+      },
+      "fullName": {
+        "label": "Vollständiger Name",
+        "required": "Vollständiger Name ist erforderlich.",
+        "minLength": "Der vollständige Name sollte mindestens 4 Zeichen lang sein.",
+        "maxLength": "Der vollständige Name sollte 30 Zeichen nicht überschreiten."
+      },
+      "email": {
+        "label": "E-Mail",
+        "required": "E-Mail ist erforderlich.",
+        "minLength": "Die E-Mail sollte mindestens 5 Zeichen lang sein.",
+        "maxLength": "Die E-Mail sollte 50 Zeichen nicht überschreiten.",
+        "pattern": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+      },
+      "phoneNumber": {
+        "label": "Telefonnummer",
+        "minLength": "Die Telefonnummer sollte mindestens 7 Zeichen lang sein.",
+        "maxLength": "Die Telefonnummer sollte 15 Zeichen nicht überschreiten.",
+        "pattern": "Die Telefonnummer sollte nur Zahlen und optional ein '+' am Anfang enthalten."
+      },
+      "message": {
+        "label": "Ihre Nachricht",
+        "required": "Eine Nachricht ist erforderlich.",
+        "minLength": "Die Nachricht sollte mindestens 20 Zeichen lang sein.",
+        "maxLength": "Die Nachricht sollte 1000 Zeichen nicht überschreiten."
+      },
+      "privacyPolicy": {
+        "required": "Bitte bestätigen Sie dieses erforderliche Feld.",
+        "text": {
+          "first": "Ich stimme der",
+          "highlight": "Datenschutzrichtlinie",
+          "textRest": "zu und willige in die Verarbeitung meiner persönlichen Daten zu diesem Anfragezweck ein."
+        }
+      }
+    }
   }
 }

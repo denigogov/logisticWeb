@@ -1,8 +1,6 @@
 import "./_imageLoading.scss";
 
-interface ImageLoadingProps {}
-
-const ImageLoading: React.FC<ImageLoadingProps> = ({}) => {
+const ImageLoading: React.FC = () => {
   return (
     <div className="image-loading-overlay">
       <svg

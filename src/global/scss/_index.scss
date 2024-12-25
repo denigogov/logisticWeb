@@ -15,6 +15,15 @@ body {
   font-family: fontFamily(primary), sans-serif;
   font-weight: fontweight(default);
   line-height: 1.5;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: color(text);
+  }
 }
 
 ul {
@@ -43,3 +52,5 @@ p {
 // h6 {
 //   color: color(text);
 // }
+
+//
