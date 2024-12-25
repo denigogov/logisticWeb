@@ -8,7 +8,7 @@ interface MediaTextProps {
 }
 
 const MediaText: React.FC<MediaTextProps> = ({ aboutUsData }) => {
-  const bulletPointData = aboutUsData?.bulletPointData ?? [];
+  const bulletPointData = aboutUsData?.bulletPointData;
   const content = aboutUsData?.contentData ?? {};
 
   return (

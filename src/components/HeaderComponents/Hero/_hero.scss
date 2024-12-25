@@ -35,11 +35,9 @@
       gap: spacing(small);
     }
   }
-
-  &__highlight {
-    // background: url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-9&color=ffd966);
-    background-image: url("../../../assets/highlightText.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+}
+.highlight {
+  background-image: url("../../../assets/highlightText.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

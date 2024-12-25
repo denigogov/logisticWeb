@@ -1,0 +1,18 @@
+.service {
+  &__title {
+    padding-bottom: spacing(default);
+    font-family: fontFamily(secondary) !important;
+    font-weight: fontweight(tiny) !important;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @include breakpoint(small) {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+}

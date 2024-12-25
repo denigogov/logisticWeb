@@ -9,9 +9,9 @@ const About: React.FC<AboutProps> = ({}) => {
 
   const data: AboutUsTypes = getAboutUsData(t);
   return (
-    <div>
+    <section>
       <MediaText aboutUsData={data} />
-    </div>
+    </section>
   );
 };
 

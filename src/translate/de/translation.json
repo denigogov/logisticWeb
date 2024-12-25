@@ -6,7 +6,7 @@
     "navItems": {
       "home": "Home",
       "about": "Über uns",
-      "services": "Service",
+      "services": "Leistungen",
       "contact": "Kontakt"
     }
   },
@@ -49,6 +49,26 @@
       "title": "Ein Jahrzehnt der Präzision und Zuverlässigkeit in der Logistik",
       "subTitle": "Maßgeschneiderte Logistiklösungen in ganz Deutschland, mit umfangreicher Erfahrung und innovativen Strategien, um Ihre Sendungen sicher und pünktlich zu liefern.",
       "text": "Bei Pako-s Transporte bieten wir zuverlässige Frachtlösungen, die auf Ihre Bedürfnisse zugeschnitten sind. Gegründet 2015 in Bulgarien, haben wir uns einen Ruf für Präzision und exzellenten Service erarbeitet. Seit 2024 sind wir ausschließlich in Bretten, Deutschland tätig und konzentrieren uns auf effiziente Inlandslogistik. Mit unserem innovativen Ansatz und jahrelanger Erfahrung können Sie darauf vertrauen, dass wir Ihre Waren sicher und pünktlich ans Ziel bringen."
+    }
+  },
+  "action": {
+    "ctaData": {
+      "titleTop": "Reibungsloser Frachtverkehr. Vereinfacht.",
+      "titleBottom": "Pako-s: Zuverlässige Transportlösungen.",
+      "button": {
+        "label": "Kontakt aufnehmen"
+      }
+    }
+  },
+  "service": {
+    "title": "Unsere Leistungen",
+    "card": {
+      "text": "Warentransport",
+      "hoverText": "Zuverlässige Transportlösungen für Unternehmen. Ihre Waren werden sicher und pünktlich geliefert – jedes Mal.",
+      "text1": "Umzugsservice",
+      "hoverText1": "Stressfreier Umzug für Privatpersonen und Unternehmen. Verlassen Sie sich auf uns, um Ihren Umzug mit Sorgfalt und Professionalität abzuwickeln.",
+      "text2": "Individuelle Lösungen",
+      "hoverText2": "Flexible Transportdienste, die auf Ihre Bedürfnisse zugeschnitten sind. Wir passen uns an, um Ihre spezifischen Anforderungen zu erfüllen."
     }
   }
 }

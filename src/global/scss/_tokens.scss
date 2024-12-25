@@ -8,16 +8,17 @@ $colorMap: (
   accent: #1788b2,
   muted: #dddddd,
   mutedGray: #f2f3f2,
-  mutedHighlight: #f4f4f4,
+
   success: #00a050,
   warning: #ffae00,
   danger: #950000,
-  textHightlight: #ee2e31,
 
   // text: #6B6B6B,
   // colors define and in use
+  mutedHighlight: #f4f4f4,
+  cardBackground: #f61e45d2,
   highlight: #ffd966,
-  highlightBackground: hsla(0deg, 0%, 45%, 0.1),
+  highlightBackground: #7373731a,
   text: #20303b,
   textDark: #10181d,
   textWhite: #fff,

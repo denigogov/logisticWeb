@@ -8,12 +8,13 @@
 
     &-text {
       color: color(text);
-      font-family: fontFamily(secondary);
+      font-family: fontFamily(primary);
+      font-weight: fontweight(light);
     }
   }
 
   .content-subtitle {
     color: color(text);
-    margin-bottom: 30px;
+    margin-bottom: spacing(small);
   }
 }

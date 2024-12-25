@@ -42,7 +42,7 @@ const Hero: React.FC<HeroProps> = ({ heroData }) => {
                 <span>{heroText.top}</span>
                 <br />
                 <span className="uk-text">
-                  <span className="hero__highlight">{heroText.highlight}</span>
+                  <span className="highlight">{heroText.highlight}</span>
                   {heroText.middle}
                 </span>
               </h1>

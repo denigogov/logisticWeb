@@ -22,6 +22,7 @@ export const getAboutUsData = (t: (key: string) => string): AboutUsTypes => ({
         text: t("aboutUs.bulletPoints.base.text"),
       },
       copy: t("aboutUs.bulletPoints.base.copy"),
+      highlight: false,
     },
     {
       icon: {
@@ -33,6 +34,7 @@ export const getAboutUsData = (t: (key: string) => string): AboutUsTypes => ({
         text: t("aboutUs.bulletPoints.operatingLocation.text"),
       },
       copy: t("aboutUs.bulletPoints.operatingLocation.copy"),
+      highlight: false,
     },
     {
       icon: {
@@ -44,6 +46,7 @@ export const getAboutUsData = (t: (key: string) => string): AboutUsTypes => ({
         text: t("aboutUs.bulletPoints.maxWeight.text"),
       },
       copy: t("aboutUs.bulletPoints.maxWeight.copy"),
+      highlight: false,
     },
     {
       icon: {
@@ -55,6 +58,7 @@ export const getAboutUsData = (t: (key: string) => string): AboutUsTypes => ({
         text: t("aboutUs.bulletPoints.deliverySpeed.text"),
       },
       copy: t("aboutUs.bulletPoints.deliverySpeed.copy"),
+      highlight: false,
     },
   ],
 

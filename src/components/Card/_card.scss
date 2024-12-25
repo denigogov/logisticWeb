@@ -1,0 +1,73 @@
+.card {
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+
+  border-radius: 15px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: color(cardBackground);
+    z-index: 0;
+    transition: height 0.5s ease;
+  }
+
+  &:hover::before {
+    height: 100%; /* Expand to cover the entire card */
+  }
+
+  &__title,
+  &__hover-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__image {
+    z-index: -1;
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 80% !important;
+    border-top-right-radius: 20px;
+    padding: 20px;
+    color: #fff;
+    background-color: color(cardBackground);
+  }
+
+  &__hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0; /* Hidden by default */
+    font-size: fontsize(default);
+    text-align: center;
+    color: #fff;
+
+    transition: opacity 0.7s ease;
+  }
+
+  &:hover &__hover-text {
+    opacity: 1;
+  }
+
+  &:hover &__title {
+    opacity: 0;
+  }
+}

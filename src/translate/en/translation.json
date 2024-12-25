@@ -50,5 +50,25 @@
       "subTitle": "Providing Tailored Logistics Solutions Across Germany, Combining Extensive Experience with Innovative Strategies to Ensure Your Shipments Are Delivered Safely and On Time.",
       "text": "At Pako-s Transporte, we provide reliable freight solutions tailored to your needs. Founded in Bulgaria in 2015, we built a reputation for precision and exceptional service. Since 2024, we operate exclusively in Bretten, Germany, focusing on efficient domestic logistics. With our innovative approach and years of expertise, you can trust us to deliver your goods safely and on time."
     }
+  },
+  "action": {
+    "ctaData": {
+      "titleTop": "Smooth Freight. Simplified",
+      "titleBottom": "Pako-s: Reliable Transport Solutions",
+      "button": {
+        "label": "Get In Touch"
+      }
+    }
+  },
+  "service": {
+    "title": "Our Services",
+    "card": {
+      "text": "Freight Delivery",
+      "hoverText": "Dependable transport solutions for businesses. Your goods, delivered safely and on time, every time.",
+      "text1": "Moving Services",
+      "hoverText1": "Hassle-free relocation for homes and offices. Trust us to handle your move with care and professionalism.",
+      "text2": "Tailored Solutions",
+      "hoverText2": "Flexible transport services customized to your needs. We adapt to ensure your specific requirements are met."
+    }
   }
 }
