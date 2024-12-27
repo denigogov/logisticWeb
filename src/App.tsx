@@ -3,6 +3,7 @@ import Action from "./Block/Action/Action";
 import Form from "./Block/Form/Form";
 import Header from "./Block/Header/Header";
 import Service from "./Block/Service/Service";
+import Modal from "./components/Modal/Modal";
 
 const App: React.FC = () => {
   return (
@@ -12,6 +13,8 @@ const App: React.FC = () => {
       <Action />
       <Service />
       <Form />
+
+      <Modal />
     </div>
   );
 };
