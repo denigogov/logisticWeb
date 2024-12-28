@@ -8,9 +8,10 @@ import SlideShow from "../../SlideShow/SlideShow";
 import LazyLoadingImage from "../../../wrappers/LazyLoadingImage";
 interface HeroProps {
   heroData: HeroTypesData;
+  observer: (node?: Element | null) => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ heroData }) => {
+const Hero: React.FC<HeroProps> = ({ heroData, observer }) => {
   const viewportSize = window.screen.width;
 
   const slideShow = [
@@ -33,7 +34,7 @@ const Hero: React.FC<HeroProps> = ({ heroData }) => {
   const heroText = heroData.hero.text;
 
   return (
-    <section className="hero">
+    <section className="hero" ref={observer}>
       <div className="uk-section uk-section-default">
         <div className="uk-container uk-container-expand">
           <div className="uk-flex  uk-flex-column uk-flex-row@m	 uk-flex-middle	">

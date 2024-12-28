@@ -1,13 +1,19 @@
 import { ReactNode, useState } from "react";
 import "./_modal.scss";
 
-interface ModalProps {
-  children?: ReactNode;
-}
+type ModalCloseTypes = {
+  top?: boolean;
+  bottom?: boolean;
+  outSide?: boolean;
+};
 
 type Scroll = "auto" | "hidden";
+interface ModalProps {
+  children?: ReactNode;
+  modalClose?: ModalCloseTypes;
+}
 
-const Modal: React.FC<ModalProps> = ({ children }) => {
+const Modal: React.FC<ModalProps> = ({ children, modalClose }) => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [scrollLock, setScrollLock] = useState<Scroll>("auto");
 
@@ -34,33 +40,53 @@ const Modal: React.FC<ModalProps> = ({ children }) => {
       {modalOpen && (
         <div className="modal">
           <div className="modal__content">
-            <button
-              className="uk-modal-close-default"
-              type="button"
-              uk-close="true"
-              onClick={handleCloseModal}
-            ></button>
-            <div className="uk-modal-header">
-              <h2 className="uk-modal-title">Modal Title</h2>
-            </div>
+            {modalClose?.top || (
+              <button
+                className="uk-modal-close-default"
+                type="button"
+                uk-close="true"
+                onClick={handleCloseModal}
+              ></button>
+            )}
             <div className="uk-modal-body">
               {children ? (
                 children
               ) : (
                 <p>
                   Default modal content. You can pass custom content as children
-                  to replace this.
+                  to replace this. your Modal should look like this
+                  <pre>
+                    <code>
+                      &lt;Modal&gt; <br /> &lt;SomeComponent/&gt; <br />
+                      &lt;/Modal&gt;
+                    </code>
+                  </pre>
+                  <ul>Optional Propertys</ul>
+                  <li>
+                    Modal Prevent Close from
+                    <ul>
+                      <small>
+                        by default the modal close buttons are set to FALSE -
+                        can be closet from anywhere of this 3 Propertys
+                      </small>
+                      <li>- bottom</li>
+                      <li>- top</li>
+                      <li>- outside</li>
+                    </ul>
+                  </li>
                 </p>
               )}
             </div>
             <div className="uk-modal-footer uk-text-right">
-              <button
-                onClick={handleCloseModal}
-                className="uk-button uk-button-default uk-modal-close"
-                type="button"
-              >
-                Close
-              </button>
+              {modalClose?.bottom || (
+                <button
+                  onClick={handleCloseModal}
+                  className="uk-button uk-button-default uk-modal-close"
+                  type="button"
+                >
+                  Close
+                </button>
+              )}
               <button
                 onClick={() => alert("Action performed!")}
                 className="uk-button uk-button-secondary"
@@ -73,7 +99,10 @@ const Modal: React.FC<ModalProps> = ({ children }) => {
       )}
 
       {modalOpen && (
-        <div className="modal__overlay" onClick={handleCloseModal}></div>
+        <div
+          className="modal__overlay"
+          onClick={!modalClose?.outSide ? handleCloseModal : undefined}
+        ></div>
       )}
     </div>
   );

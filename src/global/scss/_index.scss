@@ -15,6 +15,7 @@ body {
   font-family: fontFamily(primary), sans-serif;
   font-weight: fontweight(default);
   line-height: 1.5;
+  overflow-y: auto;
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -44,13 +45,18 @@ p {
   font-size: fontsize(default);
 }
 
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//   color: color(text);
-// }
+// Scroll on top ICon
+.arrow-scroll {
+  width: 40px;
 
-//
+  position: fixed;
+  bottom: 25px;
+  right: 2px;
+  padding: 0;
+  cursor: pointer;
+  z-index: 10000;
+
+  &:active {
+    transform: scale(0.9);
+  }
+}

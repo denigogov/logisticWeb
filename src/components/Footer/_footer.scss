@@ -1,0 +1,26 @@
+.footer {
+  padding: spacing(default) !important;
+  gap: spacing(small);
+  background-color: color(footer);
+
+  .uk-text-meta {
+    color: color(footerText);
+  }
+  &__links {
+    &-items {
+      cursor: pointer;
+      margin: 0;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: color(cardBackground);
+      }
+    }
+  }
+
+  &__logo {
+    &-item {
+      margin: 0;
+    }
+  }
+}

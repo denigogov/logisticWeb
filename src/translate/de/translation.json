@@ -98,7 +98,8 @@
         "label": "Telefonnummer",
         "minLength": "Die Telefonnummer sollte mindestens 7 Zeichen lang sein.",
         "maxLength": "Die Telefonnummer sollte 15 Zeichen nicht überschreiten.",
-        "pattern": "Die Telefonnummer sollte nur Zahlen und optional ein '+' am Anfang enthalten."
+        "pattern": "Die Telefonnummer sollte nur Zahlen und optional ein '+' am Anfang enthalten.",
+        "required": ""
       },
       "message": {
         "label": "Ihre Nachricht",
@@ -114,6 +115,13 @@
           "textRest": "zu und willige in die Verarbeitung meiner persönlichen Daten zu diesem Anfragezweck ein."
         }
       }
+    }
+  },
+  "footer": {
+    "item": {
+      "privacy": "Datenschutz",
+      "cookiesSetup": "Privatsphäre",
+      "ownerData": "Impressum"
     }
   }
 }

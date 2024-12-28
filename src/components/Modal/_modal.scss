@@ -6,8 +6,10 @@
   background-color: #fff;
   z-index: 13;
   width: 90dvw;
-  max-height: 70dvh;
-  overflow: scroll;
+  max-width: 600px;
+  height: auto;
+  max-height: 80dvh;
+  overflow-y: auto;
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -19,12 +21,13 @@
   }
 
   @include breakpoint(small) {
-    width: auto;
+    width: 95%;
     height: auto;
+    max-height: 90dvh;
   }
 
   @include breakpoint(xlarge) {
-    max-width: 40dvw;
+    max-width: 50dvw;
     height: auto;
   }
 

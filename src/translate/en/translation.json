@@ -96,10 +96,10 @@
       },
       "phoneNumber": {
         "label": "Phone Number",
-
         "minLength": "Phone number should be at least 7 characters long.",
         "maxLength": "Phone number should not exceed 15 characters.",
-        "pattern": "Phone number should contain only numbers and an optional '+' at the beginning."
+        "pattern": "Phone number should contain only numbers and an optional '+' at the beginning.",
+        "required": ""
       },
       "message": {
         "label": "Your Message",
@@ -115,6 +115,13 @@
           "textRest": "and consent to the processing of my personal data for the purpose of this inquiry."
         }
       }
+    }
+  },
+  "footer": {
+    "item": {
+      "privacy": "Privacy",
+      "cookiesSetup": "Cookies Settings",
+      "ownerData": "Legal Notice"
     }
   }
 }

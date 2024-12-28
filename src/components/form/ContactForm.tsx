@@ -13,7 +13,7 @@ interface ContactFormProps {
 
 const ContactForm: React.FC<ContactFormProps> = ({ formData }) => {
   return (
-    <div className="form uk-container-expand uk-container uk-container-expand  uk-section uk-flex-around uk-flex  uk-flex-column uk-flex-row@m uk-flex-middle	">
+    <div className="form uk-container-expand uk-container   uk-section uk-flex-around uk-flex  uk-flex-column uk-flex-row@m uk-flex-middle	">
       <div className="form__card">
         <div>
           <h1 className="uk-heading-medium form__card-title ">
