@@ -6,14 +6,24 @@ import Form from "./Block/Form/Form";
 import Header from "./Block/Header/Header";
 import Service from "./Block/Service/Service";
 import arrowScrollTopIcon from "./assets/arrowScrollIcon.svg";
+import { useLocation } from "react-router-dom";
+import { useData } from "./hooks/useData";
 
 const App: React.FC = () => {
   const { ref, inView } = useInView({
-    threshold: 0.05,
+    threshold: 0.2,
   });
   const scrollOnTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const { removeHashfromUrl } = useData();
+
+  // Hide the # from the url
+  const location = useLocation();
+  if (location.hash) {
+    removeHashfromUrl();
+  }
 
   return (
     <div>
@@ -27,10 +37,16 @@ const App: React.FC = () => {
       )}
 
       <Header observer={ref} />
-      <About />
+      <section id="about">
+        <About />
+      </section>
       <Action />
-      <Service />
-      <Form />
+      <section id="service">
+        <Service />
+      </section>
+      <section id="contact">
+        <Form />
+      </section>
       <FooterSection />
     </div>
   );

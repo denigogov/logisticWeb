@@ -1,0 +1,70 @@
+.errorDisplay {
+  height: 80dvh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: spacing(default);
+
+  &__status {
+    // color: color(highlightBackground);
+    font-size: clamp(1.3rem, 2dvw, 3rem);
+    animation: texthighligh 1s infinite linear forwards;
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+
+    letter-spacing: 14px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: texthighligh 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+
+  @keyframes texthighligh {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }
+
+  &__text {
+    &-title {
+      font-size: clamp(3rem, 7vw, 10rem) !important;
+      font-weight: fontweight(semiBold);
+    }
+
+    &-message {
+      font-size: clamp(1rem, 2.2dvw, 3rem);
+      text-wrap: balance;
+    }
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include breakpoint(small) {
+      flex-direction: row;
+    }
+
+    &-1 {
+      button {
+        padding: 7px 20px;
+        transition: all 0.3s linear;
+
+        &:hover {
+          background-color: color(muted);
+        }
+      }
+    }
+  }
+}

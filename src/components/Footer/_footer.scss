@@ -7,6 +7,10 @@
     color: color(footerText);
   }
   &__links {
+    a {
+      text-decoration: none;
+    }
+
     &-items {
       cursor: pointer;
       margin: 0;

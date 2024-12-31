@@ -14,8 +14,12 @@ i18n.use(initReactI18next).init({
     escapeValue: false,
   },
   resources: {
-    de: { translation: de },
-    en: { translation: en },
+    de: {
+      translation: de,
+    },
+    en: {
+      translation: en,
+    },
   },
 });
 

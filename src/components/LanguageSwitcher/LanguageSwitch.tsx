@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
 import languageSwitch from "../../assets/languageSwitch.svg";
 import "./_languageSwitcher.scss";
-import {
-  getLocalStorageItem,
-  saveToLocalStorage,
-} from "../../utils/localstorage";
+import { useData } from "../../hooks/useData";
 
 const LanguageSwitch: React.FC = () => {
   const { i18n } = useTranslation();
+
+  const { getLocalStorageItem, saveToLocalStorage } = useData();
+
   const localStorageLang = getLocalStorageItem("lng");
 
   if (!localStorageLang) {

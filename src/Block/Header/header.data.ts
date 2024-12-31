@@ -10,10 +10,30 @@ export const getNavigationData = (t: (key: string) => string): NavData => ({
       className: "",
     },
     navItems: [
-      { label: t("header.navItems.home") },
-      { label: t("header.navItems.about") },
-      { label: t("header.navItems.services") },
-      { label: t("header.navItems.contact") },
+      {
+        label: t("header.navItems.home"),
+        active: {
+          routePath: "/",
+        },
+      },
+      {
+        label: t("header.navItems.about"),
+        active: {
+          routePath: "#about",
+        },
+      },
+      {
+        label: t("header.navItems.services"),
+        active: {
+          routePath: "#service",
+        },
+      },
+      {
+        label: t("header.navItems.contact"),
+        active: {
+          routePath: "#contact",
+        },
+      },
     ],
   },
 });

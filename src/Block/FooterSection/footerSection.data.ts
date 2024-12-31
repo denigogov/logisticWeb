@@ -11,20 +11,20 @@ export const getFooterData = (
     {
       name: t("footer.item.privacy"),
       blankPage: true,
-      router: "test",
+      router: "/privacy",
     },
 
     {
       name: t("footer.item.cookiesSetup"),
       blankPage: true,
-      router: "test",
+      router: "cookies-setup",
       // maybe I need popup
     },
 
     {
       name: t("footer.item.ownerData"),
       blankPage: true,
-      router: "test",
+      router: "/legal-notice",
     },
   ],
 });

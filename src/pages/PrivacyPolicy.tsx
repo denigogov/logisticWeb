@@ -1,7 +1,18 @@
+import { ScrollRestoration } from "react-router-dom";
+import FooterSection from "../Block/FooterSection/FooterSection";
+import LegalNotice, {
+  LegalNoticeTextTypes,
+} from "../components/LegalNoticeText.tsx/LegalNoticeText";
+
 interface PrivacyPolicyProps {}
 
 const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({}) => {
-  const privacyPolicyData = [
+  const legalNoticeText: LegalNoticeTextTypes[] = [
+    {
+      pageTitle: "Datenschutzhinweis",
+      lastEdited: "Last Edited  22.02.2022",
+    },
+
     {
       privacyTitle: "Allgemeine Hinweise",
       descriptions: [
@@ -64,35 +75,13 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({}) => {
   ];
 
   return (
-    <div className="uk-container  uk-container-expand">
-      <div className="uk-text-center uk-text-break  uk-padding">
-        <h1 className="uk-heading-large uk-heading-medium@s uk-heading-small@xs uk-margin-remove">
-          Datenschutzhinweis
-        </h1>
-        <p className="uk-article-meta uk-text-center">Last Edited 22.12.2024</p>
-      </div>
+    <div>
+      <LegalNotice legalNoticeText={legalNoticeText} />
 
-      {privacyPolicyData?.map((item, i) => (
-        <article className="uk-article ">
-          {item.privacyTitle && (
-            <h1 key={i} className="uk-card-title uk-text-bold">
-              {item?.privacyTitle}
-            </h1>
-          )}
-
-          {item?.descriptions.map((arr, index) => (
-            <dl
-              key={index}
-              className="uk-description-list uk-description-list-divider"
-            >
-              {arr?.descriptionTitle && (
-                <dt style={{ fontWeight: 700 }}>{arr?.descriptionTitle} </dt>
-              )}
-              {arr?.desciptionText && <dd>{arr?.desciptionText}</dd>}
-            </dl>
-          ))}
-        </article>
-      ))}
+      <br />
+      {/* nativ component to scroll on top when u come to some page  ! */}
+      <ScrollRestoration />
+      <FooterSection />
     </div>
   );
 };

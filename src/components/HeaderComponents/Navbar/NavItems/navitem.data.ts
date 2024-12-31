@@ -1,7 +1,12 @@
 import { ButtonTypes } from "../../../Button/button.types";
 
+type LinkActiveType = {
+  routePath: string;
+};
+
 interface NavItemsType {
   label: string;
+  active?: LinkActiveType;
 }
 
 export interface NavData {
@@ -21,8 +26,18 @@ const navigationData: NavData = {
     },
 
     navItems: [
-      { label: "Home" },
-      { label: "About" },
+      {
+        label: "Home",
+        active: {
+          routePath: "/",
+        },
+      },
+      {
+        label: "About",
+        active: {
+          routePath: "data",
+        },
+      },
       { label: "Services" },
       { label: "Contact" },
     ],

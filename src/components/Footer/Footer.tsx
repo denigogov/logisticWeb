@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { FooterSectionTypes } from "../../Block/FooterSection/footerSection.data";
 import "./_footer.scss";
 interface FooterProps {
@@ -17,9 +18,11 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
     <footer className="footer uk-container  uk-container-expand  uk-section uk-flex  uk-flex-between  uk-flex-column uk-flex-row@m uk-padding-small uk-flex-middle">
       <div className="footer__links uk-width-1-3@m uk-flex  uk-flex-between">
         {footerData?.footerItems?.map((link, i) => (
-          <p key={i} className="footer__links-items uk-text-meta">
-            {link?.name ?? ""}
-          </p>
+          <NavLink key={i} to={link?.router ?? ""}>
+            <p className="footer__links-items uk-text-meta">
+              {link?.name ?? ""}
+            </p>
+          </NavLink>
         ))}
       </div>
 
