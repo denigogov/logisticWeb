@@ -7,17 +7,47 @@ type ModalCloseTypes = {
   outSide?: boolean;
 };
 
+type ModalNameTypes = {
+  name?: string;
+  button?: boolean;
+  classes?: string;
+  onlyText?: {
+    text?: string;
+    highlight?: string;
+    end?: string;
+  };
+};
+
+type ModalConfirmButtonTypes = {
+  name: string;
+  onClick: () => void;
+};
+
 type Scroll = "auto" | "hidden";
-interface ModalProps {
-  children?: ReactNode;
+export interface ModalProps {
+  modalOpen?: boolean;
+  modalBackgroundScroll?: Scroll | undefined;
   modalClose?: ModalCloseTypes;
+  modalName?: ModalNameTypes;
+  modalConfirmBtn?: ModalConfirmButtonTypes;
 }
 
-const Modal: React.FC<ModalProps> = ({ children, modalClose }) => {
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [scrollLock, setScrollLock] = useState<Scroll>("auto");
+export interface ModalPropTypes {
+  modalData: ModalProps;
+  children?: ReactNode;
+}
 
-  document.body.style.overflow = scrollLock;
+const Modal: React.FC<ModalPropTypes> = ({ modalData, children }) => {
+  const [modalOpen, setModalOpen] = useState<boolean>(
+    modalData.modalOpen || false
+  );
+  const [scrollLock, setScrollLock] = useState<Scroll | undefined>(
+    modalData?.modalBackgroundScroll
+  );
+
+  if (scrollLock) {
+    document.body.style.overflow = scrollLock;
+  }
 
   const handleCloseModal = () => {
     setModalOpen(false);
@@ -26,21 +56,39 @@ const Modal: React.FC<ModalProps> = ({ children, modalClose }) => {
 
   const handleOpenModal = () => {
     setModalOpen(true);
+
     setScrollLock("hidden");
   };
 
   return (
     <div>
       <p uk-margin="true">
-        <a className="uk-button uk-button-default" onClick={handleOpenModal}>
-          Modal 1
+        <a
+          className={
+            modalData?.modalName?.button
+              ? `uk-button uk-button-default ${modalData?.modalName?.classes}`
+              : `${modalData?.modalName?.classes}`
+          }
+          onClick={handleOpenModal}
+        >
+          {modalData?.modalName?.name}
         </a>
       </p>
+
+      {modalData?.modalName?.onlyText && (
+        <p className="uk-text-meta">
+          {modalData?.modalName?.onlyText?.text}{" "}
+          <a className="uk-text-primary" onClick={handleOpenModal}>
+            {modalData?.modalName?.onlyText?.highlight}{" "}
+          </a>{" "}
+          {modalData?.modalName?.onlyText?.end}
+        </p>
+      )}
 
       {modalOpen && (
         <div className="modal">
           <div className="modal__content">
-            {modalClose?.top || (
+            {modalData?.modalClose?.top || (
               <button
                 className="uk-modal-close-default"
                 type="button"
@@ -78,7 +126,7 @@ const Modal: React.FC<ModalProps> = ({ children, modalClose }) => {
               )}
             </div>
             <div className="uk-modal-footer uk-text-right">
-              {modalClose?.bottom || (
+              {modalData?.modalClose?.bottom || (
                 <button
                   onClick={handleCloseModal}
                   className="uk-button uk-button-default uk-modal-close"
@@ -87,12 +135,14 @@ const Modal: React.FC<ModalProps> = ({ children, modalClose }) => {
                   Close
                 </button>
               )}
-              <button
-                onClick={() => alert("Action performed!")}
-                className="uk-button uk-button-secondary"
-              >
-                Confirm
-              </button>
+              {modalData?.modalConfirmBtn && (
+                <button
+                  onClick={modalData?.modalConfirmBtn?.onClick}
+                  className="uk-button uk-button-secondary"
+                >
+                  {modalData?.modalConfirmBtn?.name}
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -101,7 +151,9 @@ const Modal: React.FC<ModalProps> = ({ children, modalClose }) => {
       {modalOpen && (
         <div
           className="modal__overlay"
-          onClick={!modalClose?.outSide ? handleCloseModal : undefined}
+          onClick={
+            !modalData?.modalClose?.outSide ? handleCloseModal : undefined
+          }
         ></div>
       )}
     </div>

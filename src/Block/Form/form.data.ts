@@ -1,5 +1,7 @@
 import { ButtonTypes } from "../../components/Button/button.types";
 import { FormTextTypes } from "../../components/form/ContactForm";
+import { ModalPropTypes } from "../../components/Modal/Modal";
+import { PrivacyPolicyType } from "../../pages/PrivacyPolicy";
 
 export interface FormIntputs {
   label?: string;
@@ -27,6 +29,8 @@ export interface FormTypes {
 
     button: ButtonTypes;
   };
+  modalSetup: ModalPropTypes;
+  privacySetup: PrivacyPolicyType;
 }
 
 export const getFormData = (t: (key: string) => string): FormTypes => ({
@@ -82,5 +86,27 @@ export const getFormData = (t: (key: string) => string): FormTypes => ({
         textRest: t("form.formInputs.privacyPolicy.text.textRest"),
       },
     },
+  },
+
+  modalSetup: {
+    modalData: {
+      modalOpen: true,
+      modalBackgroundScroll: "hidden",
+      modalClose: {
+        bottom: true,
+      },
+      modalName: {
+        onlyText: {
+          text: t("form.formInputs.privacyPolicy.text.first"),
+          highlight: t("form.formInputs.privacyPolicy.text.highlight"),
+          end: t("form.formInputs.privacyPolicy.text.textRest"),
+        },
+      },
+    },
+  },
+
+  privacySetup: {
+    disableScrollTop: true,
+    hideFooter: true,
   },
 });

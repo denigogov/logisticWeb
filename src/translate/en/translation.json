@@ -10,6 +10,7 @@
       "contact": "Contact"
     }
   },
+
   "hero": {
     "button": {
       "labelHeroBtn": "Request a Quote",
@@ -122,6 +123,19 @@
       "privacy": "Privacy",
       "cookiesSetup": "Cookies Settings",
       "ownerData": "Legal Notice"
+    }
+  },
+
+  "errorDispaly": {
+    "message": {
+      "titleFirst": "Page",
+      "titleHighlight": "Not",
+      "titleLast": "Found",
+      "subTitle": "Sorry, we couldn’t find the page you’re looking for",
+      "button": {
+        "home": "Go Back Home",
+        "contact": "Contact Supporter"
+      }
     }
   }
 }

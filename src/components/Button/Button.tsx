@@ -9,6 +9,7 @@ const Button: React.FC<ButtonTypes> = ({ buttonData }) => {
           className={` uk-button  uk-button-${
             buttonData?.size ?? ""
           } uk-button-${buttonData?.type ?? ""}`}
+          onClick={buttonData?.onClick}
         >
           {buttonData?.label ?? ""}
         </button>

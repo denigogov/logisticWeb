@@ -2,6 +2,8 @@ import "./_formInput.scss";
 import Button from "../Button/Button";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FormTypes } from "../../Block/Form/form.data";
+import Modal from "../Modal/Modal";
+import PrivacyPolicy from "../../pages/PrivacyPolicy";
 
 type Inputs = {
   fullname: string;
@@ -164,13 +166,9 @@ const FormInput: React.FC<FormInputProps> = ({ inputData }) => {
               type="checkbox"
             />
             {inputLabelData?.privacyPolicy && (
-              <p className="uk-text-meta">
-                {inputLabelData?.privacyPolicy?.policyText?.first}{" "}
-                <a className="uk-text-primary" href="#">
-                  {inputLabelData?.privacyPolicy?.policyText?.highlight}{" "}
-                </a>{" "}
-                {inputLabelData?.privacyPolicy.policyText?.textRest}
-              </p>
+              <Modal modalData={inputData?.modalSetup?.modalData ?? {}}>
+                <PrivacyPolicy privacySetup={inputData?.privacySetup ?? {}} />
+              </Modal>
             )}
           </div>
           {errors.privacyPolicy && (

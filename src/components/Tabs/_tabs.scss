@@ -1,0 +1,12 @@
+.tabs {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: spacing(default);
+
+    @include breakpoint(small) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}

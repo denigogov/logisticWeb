@@ -11,6 +11,7 @@ import App from "../App";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import LegalNoticePage from "../pages/LegalNoticePage";
 import NotFound from "../pages/NotFound";
+import { DataProvider } from "../hooks/DataContext";
 
 const RootRouter = () => {
   const { t } = useTranslation();
@@ -20,7 +21,14 @@ const RootRouter = () => {
   //
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Navbar navigation={headerData} />}>
+      <Route
+        path="/"
+        element={
+          <DataProvider>
+            <Navbar navigation={headerData} />
+          </DataProvider>
+        }
+      >
         <Route index element={<App />} />
         <Route path="privacy" element={<PrivacyPolicy />} />
         <Route path="legal-notice" element={<LegalNoticePage />} />

@@ -8,6 +8,9 @@ import Service from "./Block/Service/Service";
 import arrowScrollTopIcon from "./assets/arrowScrollIcon.svg";
 import { useLocation } from "react-router-dom";
 import { useData } from "./hooks/useData";
+import Cookies from "./Block/Cookies/Cookies";
+import Tabs, { TabsProps } from "./components/Tabs/Tabs";
+import Modal, { ModalPropTypes } from "./components/Modal/Modal";
 
 const App: React.FC = () => {
   const { ref, inView } = useInView({
@@ -24,6 +27,38 @@ const App: React.FC = () => {
   if (location.hash) {
     removeHashfromUrl();
   }
+
+  const tabsData: TabsProps = {
+    tabData: {
+      tabID: "cookiesTabs",
+      items: [
+        {
+          component: <Cookies />,
+          tabName: "Consent",
+          disable: false,
+        },
+        {
+          tabName: "Details",
+          text: "some text Details",
+        },
+        {
+          tabName: "About",
+          disable: false,
+          text: "some text About cookies",
+          active: true,
+        },
+      ],
+    },
+  };
+
+  const modalSetup: ModalPropTypes = {
+    modalData: {
+      modalName: {
+        name: "cookies",
+        button: true,
+      },
+    },
+  };
 
   return (
     <div>
@@ -48,6 +83,10 @@ const App: React.FC = () => {
         <Form />
       </section>
       <FooterSection />
+
+      <Modal modalData={modalSetup.modalData}>
+        <Tabs tabData={tabsData?.tabData} />
+      </Modal>
     </div>
   );
 };

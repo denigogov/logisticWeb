@@ -4,9 +4,16 @@ import LegalNotice, {
   LegalNoticeTextTypes,
 } from "../components/LegalNoticeText.tsx/LegalNoticeText";
 
-interface PrivacyPolicyProps {}
+export type PrivacyPolicyType = {
+  hideFooter?: boolean;
+  disableScrollTop?: boolean;
+};
 
-const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({}) => {
+interface PrivacyPolicyProps {
+  privacySetup?: PrivacyPolicyType;
+}
+
+const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ privacySetup }) => {
   const legalNoticeText: LegalNoticeTextTypes[] = [
     {
       pageTitle: "Datenschutzhinweis",
@@ -77,11 +84,12 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({}) => {
   return (
     <div>
       <LegalNotice legalNoticeText={legalNoticeText} />
-
       <br />
       {/* nativ component to scroll on top when u come to some page  ! */}
-      <ScrollRestoration />
-      <FooterSection />
+      {privacySetup?.disableScrollTop || <ScrollRestoration />}{" "}
+      {/*  Scroll to top as default */}
+      {privacySetup?.hideFooter || <FooterSection />}{" "}
+      {/*  Footer Display  as default */}
     </div>
   );
 };

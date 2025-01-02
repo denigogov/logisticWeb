@@ -123,5 +123,18 @@
       "cookiesSetup": "Privatsphäre",
       "ownerData": "Impressum"
     }
+  },
+
+  "errorDispaly": {
+    "message": {
+      "titleFirst": "Seite",
+      "titleHighlight": "Nicht",
+      "titleLast": "Gefunden",
+      "subTitle": "Entschuldigung, wir konnten die Seite, die Sie suchen, nicht finden",
+      "button": {
+        "home": "Zurück zur Startseite",
+        "contact": "Support kontaktieren"
+      }
+    }
   }
 }
