@@ -1,6 +1,7 @@
-import { createContext, ReactNode } from "react";
-import { DataContextType } from "./DataContext.types";
+import { createContext, ReactNode, useState } from "react";
+import { CookiePreferenceType, DataContextType } from "./DataContext.types";
 import { getLocalStorageItem, saveToLocalStorage } from "../utils/localstorage";
+import { setCookie, removeCookie, getCookie } from "../utils/cookies";
 import { useNavigate } from "react-router-dom";
 
 interface DataContextProps {
@@ -10,6 +11,22 @@ interface DataContextProps {
 export const DataContext = createContext<DataContextType | null>(null);
 
 export const DataProvider: React.FC<DataContextProps> = ({ children }) => {
+  const initialCookies: CookiePreferenceType = {
+    required: false,
+    marketing: false,
+    statistic: true,
+  };
+
+  const currentCookies = getCookie("cookiePreferences");
+
+  const [cookiePref, setCookiePref] = useState<CookiePreferenceType>(
+    currentCookies?.required ? currentCookies : initialCookies
+  );
+
+  const setCookiePreference = (preferences: CookiePreferenceType) => {
+    setCookiePref(preferences);
+  };
+
   const navigate = useNavigate();
   /**
    *
@@ -33,6 +50,11 @@ export const DataProvider: React.FC<DataContextProps> = ({ children }) => {
   return (
     <DataContext
       value={{
+        cookiePreference: cookiePref,
+        setCookiePreference,
+        getCookie,
+        setCookie,
+        removeCookie,
         getLocalStorageItem,
         saveToLocalStorage,
         removeHashfromUrl,

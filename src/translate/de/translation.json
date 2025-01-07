@@ -136,5 +136,31 @@
         "contact": "Support kontaktieren"
       }
     }
+  },
+  "cookies": {
+    "mainBtn": {
+      "deny": "ablehnen",
+      "selected": "auswahl speichern",
+      "allowAll": "Alle akzeptieren"
+    },
+    "tab": {
+      "consent": "Zustimmung",
+      "details": "Details",
+      "about": "Über"
+    },
+
+    "toggleButton": {
+      "required": "Notwendig",
+      "statistic": "Statistiken",
+      "marketing": "Marketing"
+    },
+
+    "tabsText": {
+      "consent": {
+        "row1": " Wir verwenden Cookies und ähnliche Technologien auf unserer Website und verarbeiten  Daten von Ihnen (z B. IP-Adresse), um z.B. Inhalte und Anzeigen zu personalisieren, Medien von Drittanbietern einzubinden oder Zugriffe auf unsere Website zu analysieren. Die Datenverarbeitung kann auch erst in Folge gesetzter Cookies stattfinden. Wir teilen diese Daten mit Dritten, die wir in den Privatsphäre-Einstellungen benennen.",
+        "row2": "Die Datenverarbeitung kann mit Ihrer Einwilligung oder auf Basis eines berechtigten Interesses erfolgen dem Sie in den Privatsphäre-Einstellungen widersprechen können. Sie haben das Recht, nicht einzuwilligen und Ihre Einwilligung zu einem späteren Zeitpunkt zu ändern oder zu widerrufen. Weitere Informationen zur Verwendung Ihrer Daten finden Sie in unserer",
+        "link": "Datenschutzerklärung"
+      }
+    }
   }
 }

@@ -90,11 +90,9 @@ export const getFormData = (t: (key: string) => string): FormTypes => ({
 
   modalSetup: {
     modalData: {
-      modalOpen: true,
-      modalBackgroundScroll: "hidden",
-      modalClose: {
-        bottom: true,
-      },
+      // modalOpen: true,
+      // modalBackgroundScroll: "hidden",
+
       modalName: {
         onlyText: {
           text: t("form.formInputs.privacyPolicy.text.first"),

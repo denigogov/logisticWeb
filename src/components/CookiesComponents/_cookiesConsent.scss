@@ -1,0 +1,19 @@
+.cookiesConsent {
+  &__text {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: color(text);
+    }
+  }
+
+  &__switchBtn {
+    padding-top: 10px;
+    gap: 10px;
+  }
+}

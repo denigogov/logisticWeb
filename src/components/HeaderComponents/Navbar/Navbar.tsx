@@ -52,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ navigation }) => {
         />
       </div>
 
-      {/* NAV BAR AS MAIN COMPONENT WHICH WILL BE ALL THE TIME DISPALYED !  */}
+      {/* NAV BAR AS MAIN COMPONENT WHICH WILL BE ALL THE TIME DISPLAYED !  */}
       <main>
         <Outlet />
       </main>

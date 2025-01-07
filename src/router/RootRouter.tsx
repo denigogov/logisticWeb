@@ -19,6 +19,7 @@ const RootRouter = () => {
   // passing the Navigation data from router !
   const headerData = getNavigationData(t);
   //
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route

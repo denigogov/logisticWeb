@@ -17,7 +17,7 @@ export const getFooterData = (
     {
       name: t("footer.item.cookiesSetup"),
       blankPage: true,
-      router: "cookies-setup",
+      router: "/",
       // maybe I need popup
     },
 

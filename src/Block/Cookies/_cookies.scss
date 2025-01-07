@@ -1,0 +1,13 @@
+.cookies__buttons {
+  padding-top: 20px;
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  button {
+    width: 100%;
+    padding: 10px 30px;
+  }
+}

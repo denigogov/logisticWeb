@@ -1,12 +1,18 @@
 .tabs {
+  &__title {
+    font-size: fontsize(xxsmall) !important;
+
+    @include breakpoint(small) {
+      font-size: fontsize(xsmall) !important;
+    }
+  }
+
   &__list {
     display: flex;
-    flex-direction: column;
-    gap: spacing(default);
+    justify-content: space-between;
 
     @include breakpoint(small) {
       flex-direction: row;
-      justify-content: space-between;
     }
   }
 }

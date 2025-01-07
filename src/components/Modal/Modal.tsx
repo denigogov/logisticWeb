@@ -1,5 +1,8 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import "./_modal.scss";
+import Button from "../Button/Button";
+import { ButtonTypes } from "../Button/button.types";
+import ModalInitial from "./ModalInitial";
 
 type ModalCloseTypes = {
   top?: boolean;
@@ -18,18 +21,13 @@ type ModalNameTypes = {
   };
 };
 
-type ModalConfirmButtonTypes = {
-  name: string;
-  onClick: () => void;
-};
-
 type Scroll = "auto" | "hidden";
 export interface ModalProps {
   modalOpen?: boolean;
   modalBackgroundScroll?: Scroll | undefined;
   modalClose?: ModalCloseTypes;
   modalName?: ModalNameTypes;
-  modalConfirmBtn?: ModalConfirmButtonTypes;
+  modalCookiesBtn?: ButtonTypes[];
 }
 
 export interface ModalPropTypes {
@@ -45,9 +43,13 @@ const Modal: React.FC<ModalPropTypes> = ({ modalData, children }) => {
     modalData?.modalBackgroundScroll
   );
 
-  if (scrollLock) {
-    document.body.style.overflow = scrollLock;
-  }
+  // Activate the change when user open the modal window !
+  useEffect(() => {
+    document.body.style.overflow = scrollLock || "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [scrollLock]);
 
   const handleCloseModal = () => {
     setModalOpen(false);
@@ -56,8 +58,14 @@ const Modal: React.FC<ModalPropTypes> = ({ modalData, children }) => {
 
   const handleOpenModal = () => {
     setModalOpen(true);
-
     setScrollLock("hidden");
+  };
+
+  const handleButtonClick = (customLogic?: () => void) => {
+    if (customLogic) {
+      setTimeout(handleCloseModal, 200);
+      customLogic();
+    }
   };
 
   return (
@@ -97,52 +105,34 @@ const Modal: React.FC<ModalPropTypes> = ({ modalData, children }) => {
               ></button>
             )}
             <div className="uk-modal-body">
-              {children ? (
-                children
-              ) : (
-                <p>
-                  Default modal content. You can pass custom content as children
-                  to replace this. your Modal should look like this
-                  <pre>
-                    <code>
-                      &lt;Modal&gt; <br /> &lt;SomeComponent/&gt; <br />
-                      &lt;/Modal&gt;
-                    </code>
-                  </pre>
-                  <ul>Optional Propertys</ul>
-                  <li>
-                    Modal Prevent Close from
-                    <ul>
-                      <small>
-                        by default the modal close buttons are set to FALSE -
-                        can be closet from anywhere of this 3 Propertys
-                      </small>
-                      <li>- bottom</li>
-                      <li>- top</li>
-                      <li>- outside</li>
-                    </ul>
-                  </li>
-                </p>
-              )}
-            </div>
-            <div className="uk-modal-footer uk-text-right">
-              {modalData?.modalClose?.bottom || (
-                <button
-                  onClick={handleCloseModal}
-                  className="uk-button uk-button-default uk-modal-close"
-                  type="button"
-                >
-                  Close
-                </button>
-              )}
-              {modalData?.modalConfirmBtn && (
-                <button
-                  onClick={modalData?.modalConfirmBtn?.onClick}
-                  className="uk-button uk-button-secondary"
-                >
-                  {modalData?.modalConfirmBtn?.name}
-                </button>
-              )}
+              {children ? children : <ModalInitial />}
+
+              <div className=" uk-text-right">
+                {modalData?.modalClose?.bottom || (
+                  <button
+                    onClick={handleCloseModal}
+                    className="uk-button uk-button-default uk-modal-close"
+                    type="button"
+                  >
+                    Close
+                  </button>
+                )}
+
+                {modalData?.modalCookiesBtn && (
+                  <div className="cookies__buttons">
+                    {modalData?.modalCookiesBtn.map((btn, i) => (
+                      <Button
+                        buttonData={{
+                          ...btn,
+                          onClick: () =>
+                            handleButtonClick(btn?.onClick ?? undefined),
+                        }}
+                        key={i}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

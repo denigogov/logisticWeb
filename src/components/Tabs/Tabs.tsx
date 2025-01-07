@@ -28,7 +28,7 @@ const Tabs: React.FC<TabsProps> = ({ tabData }) => {
       >
         {tabData?.items?.map((tabs, i) => (
           <li key={i} className={`${tabs.active && "uk-active"}`}>
-            <a className={`${tabs.disable && "uk-disabled"} `}>
+            <a className={`tabs__title  ${tabs.disable && "uk-disabled"} `}>
               {tabs?.tabName}
             </a>
           </li>
