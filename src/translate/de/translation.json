@@ -115,6 +115,10 @@
           "textRest": "zu und willige in die Verarbeitung meiner persönlichen Daten zu diesem Anfragezweck ein."
         }
       }
+    },
+    "sendForm": {
+      "success": "Ihre Nachricht wurde erfolgreich gesendet!",
+      "error": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
     }
   },
   "footer": {

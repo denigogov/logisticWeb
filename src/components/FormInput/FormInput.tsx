@@ -4,8 +4,10 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { FormTypes } from "../../Block/Form/form.data";
 import Modal from "../Modal/Modal";
 import PrivacyPolicy from "../../pages/PrivacyPolicy";
+import { sendForm } from "../../Block/Form/SendForm";
+import { useTranslation } from "react-i18next";
 
-type Inputs = {
+export type Inputs = {
   fullname: string;
   email: string;
   phoneNumber: string;
@@ -19,11 +21,13 @@ interface FormInputProps {
 
 const FormInput: React.FC<FormInputProps> = ({ inputData }) => {
   const inputLabelData = inputData?.formInputs;
+  const { t } = useTranslation();
 
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm<Inputs>({
     mode: "onTouched",
@@ -37,7 +41,14 @@ const FormInput: React.FC<FormInputProps> = ({ inputData }) => {
   });
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
+    sendForm({
+      reset,
+      data,
+      responseMessage: {
+        success: t("form.sendForm.success"),
+        error: t("form.sendForm.error"),
+      },
+    });
   };
 
   return (

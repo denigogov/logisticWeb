@@ -116,6 +116,10 @@
           "textRest": "and consent to the processing of my personal data for the purpose of this inquiry."
         }
       }
+    },
+    "sendForm": {
+      "success": "Your message was sent successfully!",
+      "error": "An error occurred. Please try again later."
     }
   },
   "footer": {

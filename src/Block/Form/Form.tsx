@@ -4,7 +4,6 @@ import { getFormData } from "./form.data";
 
 const Form: React.FC = () => {
   const { t } = useTranslation();
-
   const formData = getFormData(t);
 
   return (

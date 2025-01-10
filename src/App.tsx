@@ -25,8 +25,6 @@ const App: React.FC = () => {
     removeHashfromUrl();
   }
 
-  const test = new TextEncoder().encode("true");
-
   return (
     <div>
       {!inView && (
