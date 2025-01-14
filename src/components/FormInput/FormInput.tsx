@@ -6,6 +6,14 @@ import Modal from "../Modal/Modal";
 import PrivacyPolicy from "../../pages/PrivacyPolicy";
 import { sendForm } from "../../Block/Form/SendForm";
 import { useTranslation } from "react-i18next";
+import ReCAPTCHA from "react-google-recaptcha";
+import React, { useEffect, useRef, useState } from "react";
+import { useData } from "../../hooks/useData";
+import { loadReCAPTCHA } from "../../utils/reCaptcha";
+
+
+
+
 
 export type Inputs = {
   fullname: string;
@@ -19,9 +27,18 @@ interface FormInputProps {
   inputData: Partial<FormTypes>;
 }
 
+const RECHAPTA_SITE_KEY = import.meta.env.VITE_GOOGLE_RECHAPTA_KEY as string;
+
 const FormInput: React.FC<FormInputProps> = ({ inputData }) => {
+
+
+  const recaptchaRef = useRef<ReCAPTCHA | null>(null);
+
+
+
   const inputLabelData = inputData?.formInputs;
   const { t } = useTranslation();
+
 
   const {
     register,
@@ -40,15 +57,52 @@ const FormInput: React.FC<FormInputProps> = ({ inputData }) => {
     },
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    sendForm({
-      reset,
-      data,
-      responseMessage: {
-        success: t("form.sendForm.success"),
-        error: t("form.sendForm.error"),
-      },
-    });
+
+  const { cookiePreference } = useData();
+  const cookiesAccepted  = cookiePreference?.required;
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState<boolean>(false);
+
+
+
+
+
+  useEffect(() => {
+    if (cookiesAccepted && !recaptchaLoaded) {
+      loadReCAPTCHA({setRecaptchaLoaded});
+    }
+  }, [cookiesAccepted, recaptchaLoaded]);
+
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    try {
+  
+      const token = await recaptchaRef?.current?.executeAsync();
+      recaptchaRef?.current?.reset(); 
+  
+      if (!token)  return;
+      
+  
+     
+      const formData = {
+        ...data,
+        "g-recaptcha-response": token, 
+      };
+
+
+      console.log(formData);
+  
+     
+      sendForm({
+        reset,
+        data: formData, 
+        responseMessage: {
+          success: t("form.sendForm.success"),
+          error: t("form.sendForm.error"),
+        },
+      });
+    } catch (error) {
+      console.error("Error during form submission:", error);
+    }
   };
 
   return (
@@ -192,6 +246,31 @@ const FormInput: React.FC<FormInputProps> = ({ inputData }) => {
         <div>
           <Button buttonData={inputLabelData?.button} />
         </div>
+
+
+        {cookiesAccepted && recaptchaLoaded && (
+          <>
+          <ReCAPTCHA
+          ref={recaptchaRef}
+          size="invisible"
+          sitekey={RECHAPTA_SITE_KEY}
+          className="custom-recaptcha"
+          />
+
+{/* <p className="uk-text-meta uk-text-break">Diese Website ist durch reCAPTCHA geschützt und es gelten die <a className="uk-text-primary"  target='_blank' href="https://policies.google.com/privacy">Datenschutzbestimmungen</a>  und <a  className="uk-text-primary"  target='_blank' href="https://policies.google.com/terms">Nutzungsbedingungen</a>  von Google.</p> */}
+
+<p className="uk-text-meta uk-text-break">{t('form.formInputs.reChapcta.firstText')} <a className="uk-text-primary"  target='_blank' href="https://policies.google.com/privacy">{t('form.formInputs.reChapcta.privacyLinkText')}</a>  {t('form.formInputs.reChapcta.and')} <a  className="uk-text-primary"  target='_blank' href="https://policies.google.com/terms">{t('form.formInputs.reChapcta.secondLinkText')}</a>  {t('form.formInputs.reChapcta.endText')}</p>
+          </>
+
+          
+        )}
+
+
+
+
+      
+
+        
       </form>
     </div>
   );

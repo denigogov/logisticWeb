@@ -115,6 +115,13 @@
           "highlight": "Privacy Policy",
           "textRest": "and consent to the processing of my personal data for the purpose of this inquiry."
         }
+      },
+      "reChapcta": {
+        "firstText": "This website is protected by reCAPTCHA, and Google's ",
+        "privacyLinkText": "data privacy policy",
+        "and": "and",
+        "secondLinkText": "terms and conditions of use",
+        "endText": "apply."
       }
     },
     "sendForm": {

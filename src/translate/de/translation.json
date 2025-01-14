@@ -114,6 +114,14 @@
           "highlight": "Datenschutzrichtlinie",
           "textRest": "zu und willige in die Verarbeitung meiner persönlichen Daten zu diesem Anfragezweck ein."
         }
+      },
+
+      "reChapcta": {
+        "firstText": "Diese Website ist durch reCAPTCHA geschützt und es gelten die ",
+        "privacyLinkText": "Datenschutzbestimmungen",
+        "and": "und",
+        "secondLinkText": "Nutzungsbedingungen",
+        "endText": "von Google."
       }
     },
     "sendForm": {

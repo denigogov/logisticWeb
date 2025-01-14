@@ -48,3 +48,19 @@
     }
   }
 }
+
+.grecaptcha-badge {
+  width: 70px !important;
+  height: 60px;
+  position: static !important;
+  float: right !important;
+  transition: all 0.4s linear !important;
+  transform: translateY(
+    12px
+  ); /* Bottom-aligns badge icon & CF7 submit button.
+    Your value may need to be different */
+  visibility: hidden;
+}
+.grecaptcha-badge:hover {
+  width: 256px !important;
+}
